@@ -338,7 +338,7 @@ class Board(object):
             self.sp.close()
             
     """ Added functionality, right on the board """
-    def sendString(str):
+    def sendString(self, str):
         msg = bytearray([STRING_DATA, str])
         self.sp.write(msg)
 
