@@ -336,6 +336,11 @@ class Board(object):
                     pin.mode = OUTPUT
         if hasattr(self, 'sp'):
             self.sp.close()
+            
+    """ Added functionality, right on the board """
+    def sendString(str):
+        msg = bytearray([STRING_DATA, str])
+        self.sp.write(msg)
 
     # Command handlers
     def _handle_analog_message(self, pin_nr, lsb, msb):
